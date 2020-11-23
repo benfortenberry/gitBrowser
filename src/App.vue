@@ -1,32 +1,27 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <b-container>
+      <b-row
+        ><b-col
+          ><h1>
+            <router-link to="/"
+              ><font-awesome-icon :icon="['fab', 'github']" /> Git
+              Browser</router-link
+            >
+          </h1></b-col
+        ></b-row
+      >
+      <b-row>
+        <b-col> <router-view /></b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+$body-bg: #ccc;
+$primary: #111;
+$secondary: #c6c8ca;
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~bootstrap-vue/src/index.scss";
 </style>

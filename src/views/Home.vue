@@ -1,18 +1,21 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <RepoList :page="page"></RepoList>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import RepoList from "@/components/RepoList.vue";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld
+    RepoList
+  },
+  computed: {
+    page() {
+      return this.$route.params.page;
+    }
   }
 };
 </script>
