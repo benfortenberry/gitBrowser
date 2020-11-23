@@ -21,15 +21,17 @@
         <b-list-group-item
           variant="dark"
           class="commitItem"
-          v-for="commit in commits"
-          :key="commit.id"
+          v-for="commitItem in commits"
+          :key="commitItem.id"
         >
           <div class="d-flex w-100 justify-content-between">
-            <!-- <h5 class="mb-1">{{ commit.commit.message | truncate(140) }}</h5> -->
+            <h5 class="mb-1" v-if="commitItem.commit">
+              {{ commitItem.commit.message | truncate(140) }}
+            </h5>
           </div>
-          <p class="mb-1">
-            {{ commit.commit.author.name }} -
-            {{ commit.commit.author.date | formatDate }}
+          <p class="mb-1" v-if="commitItem.commit">
+            {{ commitItem.commit.author.name }} -
+            {{ commitItem.commit.author.date | formatDate }}
           </p>
         </b-list-group-item>
       </b-list-group>
